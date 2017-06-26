@@ -749,7 +749,7 @@ class Arin:
         Returns
             OrgPayload - https://www.arin.net/resources/restfulpayloads.html#org
         """
-        return self._api_query("/net/%s/org" % parent_net_handle, "%s" % org_payload)
+        return self._api_query("/net/%s/org" % parent_net_handle, "%s" % org_payload, "POST")
 
     def create_recipient_customer(self, parent_net_handle, customer_payload):
         """Create Recipient Customer
@@ -762,7 +762,7 @@ class Arin:
         Returns
             CustomerPayload - https://www.arin.net/resources/restfulpayloads.html#customer
         """
-        return self._api_query("/net/%s/customer" % parent_net_handle, "%s" % customer_payload)
+        return self._api_query("/net/%s/customer" % parent_net_handle, "%s" % customer_payload, "POST")
 
     def reassign_net(self, parent_net_handle, net_payload):
         """Reassign Net
