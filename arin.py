@@ -89,29 +89,40 @@ class CustomerPayload:
         self.privateCustomer = privateCustomer
 
     def __str__(self):
+        str_list = 
         return """<customer xmlns="http://www.arin.net/regrws/core/v1" >
-                    <customerName>%s</customerName>
+                    <customerName>{}</customerName>
                     <iso3166-1>
-                        <name>UNITED STATES</name>
-                        <code2>US</code2>
-                        <code3>USA</code3>
-                        <e164>1</e164>
+                        <name>{}</name>
+                        <code2>{}</code2>
+                        <code3>{}</code3>
+                        <e164>{}</e164>
                     </iso3166-1>
                     <handle></handle>
                     <streetAddress>
-                        <line number = "1">%s</line>
+                        <line number = "1">{}</line>
                     </streetAddress>
-                    <city>%s</city>
-                    <iso3166-2>%s</iso3166-2>
-                    <postalCode>%s</postalCode>
+                    <city>{}</city>
+                    <iso3166-2>{}</iso3166-2>
+                    <postalCode>{}</postalCode>
                     <comment>
-                        <line number = "1">%s</line>
+                        <line number = "1">{}</line>
                     </comment>
-                    <parentOrgHandle>%s</parentOrgHandle>
+                    <parentOrgHandle>{}</parentOrgHandle>
                     <registrationDate></registrationDate>
-                    <privateCustomer>%s</privateCustomer>
-                </customer>""" % (self.customerName, self.streetAddress, self.city, self.iso3166_2, self.postalCode, self.comment, self.parentOrgHandle, self.privateCustomer)
-
+                    <privateCustomer>{}</privateCustomer>
+                </customer>""".format(self.customerName,
+                                      self.iso3166_1name,
+                                      self.iso3166_1code2,
+                                      self.iso3166_1code3,
+                                      self.iso3166_1e164,
+                                      self.isoself.streetAddress,
+                                      self.city,
+                                      self.iso3166_2,
+                                      self.postalCode,
+                                      self.comment,
+                                      self.parentOrgHandle,
+                                      self.privateCustomer.__str__.lower())
 
 
 class OrganizationPayload:
